@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FocusViewController: UIViewController {
+class FocusViewController2: UIViewController, UICollectionViewDelegate, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var refreshButton: UIButton!
@@ -88,8 +88,9 @@ extension FocusViewController : UICollectionViewDelegate {
         
         let storyboard = UIStoryboard(name: "QuickFocus", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "QuickFocusListViewController") as! QuickFocusListViewController
-        vc.title = item.title
-        navigationController?.pushViewController(vc, animated: true)
+        
+        present(vc,animated: true)
+        
     
         
     }
